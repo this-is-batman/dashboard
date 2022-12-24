@@ -8,18 +8,17 @@ from dash_bootstrap_components._components.Container import Container
 import dash
 import sys
 sys.path.append("layout_components/")
-#from navbar import navbar_simple
 from navbar import NavBar
 
-app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = Dash(__name__,external_stylesheets=[dbc.themes.BOOTSTRAP], use_pages=True)
 
+# ----- Components of the app are defined here ---------------------
 
 navbar = NavBar(navbar_title="Covid Dashboard")
 navbar_simple = navbar.simpleNavBar(linkinfo_list = [{"link_name": "Link", "link_url": "#"}, {"link_name": "Link1", "link_url": "#"}])
 
-#default = dbc.NavbarSimple(children=[dbc.NavItem(dbc.NavLink("Link", href="#"))], brand="Covid Dashboard", brand_href="#", sticky="top", color="dark", dark=True, className="mb-5")
-
-app.layout = html.Div([navbar_simple])
+# -------- defining the layout of the app ---------------------------
+app.layout = html.Div([navbar_simple, dash.page_container])
 
 if __name__ == '__main__':
     app.run_server(debug=True)
