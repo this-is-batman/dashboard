@@ -15,7 +15,7 @@ app = Dash(__name__,external_stylesheets=[dbc.themes.BOOTSTRAP], use_pages=True)
 # ----- Components of the app are defined here ---------------------
 
 navbar = NavBar(navbar_title="Covid Dashboard")
-navbar_simple = navbar.simpleNavBar(linkinfo_list = [{"link_name": "Link", "link_url": "#"}, {"link_name": "Link1", "link_url": "#"}])
+navbar_simple = navbar.simpleNavBar(linkinfo_list = [{"link_name": "Link", "link_url": "/"}, {"link_name": "Card Analysis", "link_url": "/cards"}])
 
 # -------- defining the layout of the app ---------------------------
 app.layout = html.Div([navbar_simple, dash.page_container])
