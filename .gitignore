@@ -1,3 +1,4 @@
+*.csv
 dash_venv/
 */__pycache__/*
 data/
